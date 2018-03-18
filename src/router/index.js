@@ -1,15 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import ManageHome from '@/components/manage-home/manage-home.vue'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      redirect: '/manage-home',
+      component: ManageHome
+    },
+    {
+      path: '/manage-home',
+      name: 'ManageHome',
+      component: ManageHome
     }
   ]
 })
