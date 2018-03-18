@@ -1,2 +1,2 @@
-# Research-System
-科研教务系统
+# Research-System-PC
+科研教务系统(PC端)
