@@ -1,2 +1,2 @@
-# Research-System-PC
+# Pandora-PC
 科研教务系统(PC端)
