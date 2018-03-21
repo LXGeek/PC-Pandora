@@ -2,6 +2,37 @@
   <div class="home">
     <el-nav></el-nav>
     <div class="content">
+      <div class="breadcrumb clearfix">
+        <div>您的当前位置&nbsp;:&nbsp;</div>
+        <el-breadcrumb separator-class="el-icon-arrow-right">
+          <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item></el-breadcrumb-item>
+        </el-breadcrumb>
+      </div>
+      <el-form :inline="true" :model="formInline" class="demo-form-inline">
+        <el-form-item label="奖励类别">
+          <el-select v-model="formInline.reward" placeholder="请选择奖励类别">
+            <el-option label="科研项目" value="1"></el-option>
+            <el-option label="科研获奖" value="2"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="项目类型">
+          <el-select v-model="formInline.project" placeholder="请选择项目类型">
+            <el-option label="国家级" value="1"></el-option>
+            <el-option label="省部级" value="2"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="选择年份">
+          <el-date-picker
+            v-model="formInline.time"
+            type="year"
+            placeholder="请选择年份">
+          </el-date-picker>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="onSubmit">点击查询</el-button>
+        </el-form-item>
+      </el-form>
       <el-tabs type="border-card">
         <el-tab-pane label="项目一览">
           <el-table
@@ -141,12 +172,20 @@ export default {
         rewardNum: 10,
       }],
       totalProjec: 100,
-      totalReward: 50
+      totalReward: 50,
+      formInline: {
+        reward: '',
+        project: '',
+        time: ''
+      }
     };
   },
   methods: {
     handleClick(row) {
       console.log(row);
+    },
+    onSubmit() {
+      console.log('submit!');
     }
   }
 }

@@ -6,10 +6,18 @@
     img, .title {
       float: left;
     }
-    .title {
+    .el-header {
+      float: right;
+      padding: 0 40px;
+    }
+    .title, .el-header {
       font-size: 30px;
       padding-left: 50px;
       color: #FFFAFA
+    }
+    .el-dropdown {
+      color: #FFFAFA;
+      font-size: 16px;
     }
   }
   .nav {

@@ -3,6 +3,16 @@
     <div class="header clearfix">
       <img src="@/assets/img/logo.png"/>
       <div class="title">科研业务综合管理系统</div>
+      <el-header style="text-align: right; font-size: 16px">
+      <el-dropdown>
+        <i class="el-icon-setting" style="margin-right: 15px"></i>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>个人设置</el-dropdown-item>
+          <el-dropdown-item>退出登录</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+      <span>王小虎</span>
+    </el-header>
     </div>
     <div class="nav">
       <div class="head-v3">

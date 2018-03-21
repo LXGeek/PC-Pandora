@@ -1,6 +1,36 @@
 .home {
   .content {
     padding: 10px 10px 0 10px;
+    .breadcrumb {
+      color: 	#A3A3A3;
+      height: 20px;
+      line-height: 20px;
+      font-size: 16px;
+      margin: 10px 0;
+      div {
+        float: left;
+      }
+      .el-breadcrumb {
+        font-size: 16px;
+        line-height: 20px;
+        .el-breadcrumb__inner {
+          color: 	#A3A3A3;
+        }
+        .el-breadcrumb__inner:hover {
+          color: #409EFF;
+        }
+      }
+    }
+    .el-form {
+      font-size: 16px;
+      margin: 20px 0 0 15px;
+      .el-form-item {
+        margin-right: 40px;
+        .el-form-item__label {
+          font-size: 16px;
+        }
+      }
+    }
     .el-tabs__content {
       background: #f0f7fc;
     }
