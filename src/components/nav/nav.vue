@@ -1,5 +1,5 @@
 <template>
-  <div class="manage-home">
+  <div class="main">
     <div class="header clearfix">
       <img src="@/assets/img/logo.png"/>
       <div class="title">科研业务综合管理系统</div>
@@ -312,7 +312,7 @@
 export default {
   data () {
     return {
-      status: 2
+      status: 1
     }
   },
   methods: {
@@ -364,5 +364,5 @@ export default {
 </script>
 
 <style lang='scss'>
-  @import "./manage-home.scss";
+  @import "./nav.scss";
 </style>

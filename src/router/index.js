@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ManageHome from '@/components/manage-home/manage-home.vue'
+import Nav from '@/components/nav/nav.vue'
+import Home from '@/components/home/home.vue'
 
 Vue.use(Router)
 
@@ -9,13 +10,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/manage-home',
-      component: ManageHome
+      redirect: '/home',
+      component: Home
     },
     {
-      path: '/manage-home',
-      name: 'ManageHome',
-      component: ManageHome
+      path: '/nav',
+      name: 'Nav',
+      component: Nav
+    },
+    {
+      path: '/home',
+      name: 'Home',
+      component: Home
     }
   ]
 })
