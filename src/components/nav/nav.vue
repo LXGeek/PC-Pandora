@@ -3,7 +3,7 @@
     <div class="header clearfix">
       <img src="@/assets/img/logo.png"/>
       <div class="title">科研业务综合管理系统</div>
-      <el-header style="text-align: right; font-size: 16px">
+      <el-header style="text-align: right; font-size: 17px">
       <el-dropdown>
         <i class="el-icon-setting" style="margin-right: 15px"></i>
         <el-dropdown-menu slot="dropdown">
