@@ -6,9 +6,12 @@ import 'element-ui/lib/theme-chalk/index.css';
 import App from './App'
 import router from './router'
 import $ from 'jquery'
+import axios from 'axios'
+
+Vue.prototype.$ajax = axios
 
 Vue.config.productionTip = false
-Vue.use(ElementUI);
+Vue.use(ElementUI)
 
 /* eslint-disable no-new */
 new Vue({

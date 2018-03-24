@@ -43,6 +43,7 @@
         <el-tab-pane label="项目一览">
           <el-table
             :data="projectList"
+            v-loading="loading"
             border>
             <el-table-column
               prop="projectType"
@@ -130,6 +131,8 @@
 </template>
 
 <script>
+const listUrl = 'https://easy-mock.com/mock/5ab605ce72286c70d351bc2f/example/homeList'
+
 import Nav from '../nav/nav.vue'
 
 export default {
@@ -138,48 +141,9 @@ export default {
   },
   data() {
     return {
-      projectList: [{
-        projectType: '国家级',
-        submitNum: 2,
-        passedNum: 5,
-        rewardNum: 10,
-      }, {
-        projectType: '国家级',
-        submitNum: 2,
-        passedNum: 5,
-        rewardNum: 10,
-      }, {
-        projectType: '国家级',
-        submitNum: 2,
-        passedNum: 5,
-        rewardNum: 10,
-      }, {
-        projectType: '国家级',
-        submitNum: 2,
-        passedNum: 5,
-        rewardNum: 10,
-      }],
-      rewardList: [{
-        rewardType: '科研项目',
-        submitNum: 2,
-        passedNum: 5,
-        rewardNum: 10,
-      }, {
-        rewardType: '科研项目',
-        submitNum: 2,
-        passedNum: 5,
-        rewardNum: 10,
-      }, {
-        rewardType: '科研项目',
-        submitNum: 2,
-        passedNum: 5,
-        rewardNum: 10,
-      }, {
-        rewardType: '科研项目',
-        submitNum: 2,
-        passedNum: 5,
-        rewardNum: 10,
-      }],
+      loading: false,
+      projectList: [],
+      rewardList: [],
       totalProjec: 100,
       totalReward: 50,
       formInline: {
@@ -190,12 +154,40 @@ export default {
       activeNames: ['1']
     };
   },
+  created (){
+    this.onSubmit();
+  },
   methods: {
     handleClick(row) {
       console.log(row);
     },
     onSubmit() {
-      console.log('submit!');
+      this.loading = true;
+      this.projectList = [];
+      this.rewardList = [];
+
+      this.$ajax({
+        method: 'get',
+        url: listUrl,
+        data: this.formInline
+      }).then(resp => {
+        let respon = resp.data;
+        if(respon.success){
+          this.projectList = respon.data.projectList;
+          this.rewardList = respon.data.rewardList;
+        }
+        this.loading = false;
+      }).catch(error => {
+        this.messageNotify(error, 'error');
+      });
+    },
+    messageNotify(msg, type) {
+      this.$notify({
+        title: '提示',
+        message: msg,
+        type: type,
+        duration: 2000
+      });
     },
     handleChange(val) {
       console.log(val);
