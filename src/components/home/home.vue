@@ -14,12 +14,18 @@
           <el-select v-model="formInline.reward" placeholder="请选择奖励类别">
             <el-option label="科研项目" value="1"></el-option>
             <el-option label="科研获奖" value="2"></el-option>
+            <el-option label="学术论文" value="3"></el-option>
+            <el-option label="知识产权" value="4"></el-option>
+            <el-option label="技术标准" value="5"></el-option>
+            <el-option label="创作成果" value="6"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="项目类型">
           <el-select v-model="formInline.project" placeholder="请选择项目类型">
             <el-option label="国家级" value="1"></el-option>
             <el-option label="省部级" value="2"></el-option>
+            <el-option label="厅局级" value="3"></el-option>
+            <el-option label="院校级" value="4"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="选择年份">
@@ -117,6 +123,9 @@
         </el-tab-pane>
       </el-tabs>
     </div>
+    <div class="footer">
+       <p>Copyright © 2013-2019 <a href="http://222.24.19.31/">西安邮电大学科技处</a></p>
+    </div>
   </div>
 </template>
 
@@ -177,7 +186,8 @@ export default {
         reward: '',
         project: '',
         time: ''
-      }
+      },
+      activeNames: ['1']
     };
   },
   methods: {
@@ -186,6 +196,9 @@ export default {
     },
     onSubmit() {
       console.log('submit!');
+    },
+    handleChange(val) {
+      console.log(val);
     }
   }
 }

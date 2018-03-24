@@ -7,7 +7,7 @@
       <el-dropdown>
         <i class="el-icon-setting" style="margin-right: 15px"></i>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>个人设置</el-dropdown-item>
+          <el-dropdown-item><router-link :to="{ name: 'Setting'}">个人设置</router-link></el-dropdown-item>
           <el-dropdown-item>退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -23,7 +23,7 @@
 
                 <li v-if="status == 1" _t_nav="home">
       						<h2>
-      							<a href="#">首页</a>
+                    <router-link :to="{ name: 'Home'}">首页</router-link>
       						</h2>
       					</li>
 
@@ -132,7 +132,8 @@
       				<dl>
       					<dt>关于个人</dt>
       					<dd>
-      						<a hotrep="hp.header.home.monitoring1" href="#">个人信息维护</a>
+      						<!-- <a hotrep="hp.header.home.monitoring1" href="#">个人信息维护</a> -->
+                  <router-link hotrep="hp.header.home.monitoring1" :to="{ name: 'Setting'}">个人信息维护</router-link>
       					</dd>
 
       				</dl>
@@ -326,7 +327,12 @@ export default {
     }
   },
   methods: {
-
+    jumpTo() {
+      // this.$router.push({
+      //   path: '/setting'
+      // });
+      alert(123);
+    }
   },
   created() {
     jQuery(document).ready(function(){

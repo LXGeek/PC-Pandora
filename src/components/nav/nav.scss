@@ -17,7 +17,11 @@
     }
     .el-dropdown {
       color: #FFFAFA;
-      font-size: 16px;
+      font-size: 18px;
+      .el-icon-setting {
+        padding: 35px 0 30px 20px;
+        cursor: pointer;
+      }
     }
   }
   .nav {
@@ -39,7 +43,6 @@
       background: #27303f;
     }
     .navigation-up .navigation-v3 {
-      // float: left;
       margin: 0 auto;
     }
     .navigation-up .navigation-v3 ul {
@@ -75,7 +78,7 @@
     .navigation-down .nav-down-menu {
       width: 100%;
       margin: 0;
-      background: #344157;
+      background: rgba(52,65,87,.9);
       position: absolute;
       top: 0px;
     }
