@@ -15,8 +15,8 @@
           <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
             <el-form-item label="性别" prop="sex">
               <el-radio-group v-model="ruleForm.sex">
-                <el-radio label="男"></el-radio>
-                <el-radio label="女"></el-radio>
+                <el-radio :label="1">男</el-radio>
+                <el-radio :label="2">女</el-radio>
               </el-radio-group>
             </el-form-item>
             <el-form-item label="电话号码 : " prop="number">
@@ -29,10 +29,10 @@
               <el-input v-model="ruleForm.idCard"></el-input>
             </el-form-item>
             <el-form-item label="建行卡号 : " prop="bankCard">
-              <el-input v-model="ruleForm.bankCard"></el-input>
+              <el-input v-model.number="ruleForm.bankCard"></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+              <el-button type="primary" @click="changePass()">提交</el-button>
               <el-button @click="resetForm('ruleForm')">重置</el-button>
             </el-form-item>
           </el-form>
@@ -50,7 +50,7 @@
               <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off"></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
+              <el-button type="primary" @click="baseData()">提交</el-button>
               <el-button @click="resetForm('ruleForm2')">重置</el-button>
             </el-form-item>
           </el-form>
@@ -105,10 +105,10 @@ export default {
         ]
       },
       ruleForm: {
-          sex: '',
-          number: '',
-          email: '',
-          idCard: ''
+          sex: 1,
+          number: null,
+          email: null,
+          idCard: null
         },
         rules: {
           sex: [
@@ -116,36 +116,35 @@ export default {
           ],
           number: [
             { required: true, message: '请输入电话号码', trigger: 'blur' },
-            { min: 6, max: 11, message: '长度在 6 到 11 个字符', trigger: 'blur,change' },
             { type: 'number', message: '号码必须为数字类型', trigger: 'blur,change' },
           ],
           email: [
             { required: true, message: '请输入邮箱地址', trigger: 'blur' },
-            { type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur,change' }
+            { type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur' }
           ],
           idCard: [
             { required: true, message: '请输入身份证号', trigger: 'blur' },
           ],
           bankCard: [
             { required: true, message: '请输入建行卡号', trigger: 'blur' },
+            { type: 'number', message: '卡号必须为数字类型', trigger: 'blur,change' },
           ]
         }
     }
   },
   methods: {
-    submitForm(formName) {
-      this.$refs[formName].validate((valid) => {
-        if (valid) {
-          alert('submit!');
-        } else {
-          console.log('error submit!!');
-          return false;
-        }
-      });
+    baseData() {
+      console.log(this.ruleForm2);
+    },
+    changePass() {
+      console.log(this.ruleForm);
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
     }
+  },
+  computed: {
+
   }
 }
 </script>
