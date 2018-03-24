@@ -57,6 +57,9 @@
         </el-tab-pane>
       </el-tabs>
     </div>
+    <div class="footer">
+       <p>Copyright © 2013-2019 <a href="http://222.24.19.31/">西安邮电大学科技处</a></p>
+    </div>
   </div>
 </template>
 

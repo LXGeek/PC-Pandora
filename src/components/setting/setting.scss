@@ -1,6 +1,6 @@
 .setting {
   .content {
-    padding: 15px 25px;
+    padding: 15px 25px 10px 25px;
     .breadcrumb {
       color: 	#A3A3A3;
       height: 20px;
@@ -32,6 +32,18 @@
       .el-form {
         padding: 20px 900px 20px 0;
       }
+    }
+  }
+  .footer {
+    color: #606266;
+    width: 100%;
+    background: rgba(255,255,255,0.6);
+    margin-top: 15px;
+    padding: 10px 0;
+    text-align: center;
+    a {
+      color: #606266;
+      text-decoration: none;
     }
   }
 }
