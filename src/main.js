@@ -7,8 +7,12 @@ import App from './App'
 import router from './router'
 import $ from 'jquery'
 import axios from 'axios'
+import md5 from 'js-md5'
+import moment from 'moment'
 
-Vue.prototype.$ajax = axios
+Vue.prototype.axios = axios
+Vue.prototype.md5 = md5
+Vue.prototype.moment = moment
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)

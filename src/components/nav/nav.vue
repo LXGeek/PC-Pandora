@@ -59,7 +59,7 @@
 
       					<li _t_nav="search">
       						<h2>
-      							<a href="#">条件查询</a>
+                    <router-link :to="{ name: 'Query'}">条件查询</router-link>
       						</h2>
       					</li>
 
@@ -76,7 +76,7 @@
       					</li>
                 <li _t_nav="news">
       						<h2>
-      							<a href="#">文档通知</a>
+                    <router-link :to="{ name: 'DocxNotice'}">文档-通知</router-link>
       						</h2>
       					</li>
                 <li _t_nav="goto">

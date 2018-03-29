@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" v-loading.fullscreen.lock="fullscreenLoading">
     <el-nav></el-nav>
     <div class="content">
       <div class="breadcrumb clearfix">
@@ -39,35 +39,40 @@
           <el-button type="primary" @click="onSubmit">点击查询</el-button>
         </el-form-item>
       </el-form>
-      <el-tabs type="border-card">
-        <el-tab-pane label="项目一览">
+      <el-tabs type="border-card" v-model="activeName" @tab-click="tabClick">
+        <el-tab-pane label="项目一览" name="first">
           <el-table
             :data="projectList"
-            v-loading="loading"
+            stripe
             border>
             <el-table-column
               prop="projectType"
               label="项目类型"
-              align="center">
+              align="center"
+              min-width="20%">
             </el-table-column>
             <el-table-column
               prop="submitNum"
               label="提交数"
-              align="center">
+              align="center"
+              min-width="20%">
             </el-table-column>
             <el-table-column
               prop="passedNum"
               label="审核通过数"
-              align="center">
+              align="center"
+              min-width="20%">
             </el-table-column>
             <el-table-column
               prop="rewardNum"
               label="[审核通过]奖励总数"
-              align="center">
+              align="center"
+              min-width="20%">
             </el-table-column>
             <el-table-column
               label="操作"
-              align="center">
+              align="center"
+              min-width="20%">
               <template slot-scope="scope">
                 <el-button @click="handleClick(scope.row)" type="text" size="medium">查看详情</el-button>
                 <el-button type="text" size="medium">添加</el-button>
@@ -75,40 +80,47 @@
             </el-table-column>
           </el-table>
           <el-pagination
-            v-if="totalProjec !== 0"
+            v-if="totalProject !== 0"
+            @current-change="currentProject"
             background
             layout="prev, pager, next"
-            :total="totalProjec">
+            :page-size="pageSize"
+            :total="totalProject">
           </el-pagination>
         </el-tab-pane>
-        <el-tab-pane label="奖励一览">
+        <el-tab-pane label="奖励一览" name="second">
           <el-table
             :data="rewardList"
-            border
-            width="980">
+            stripe
+            border>
             <el-table-column
               prop="rewardType"
               label="奖励类型"
-              align="center">
+              align="center"
+              min-width="20%">
             </el-table-column>
             <el-table-column
               prop="submitNum"
               label="提交数"
-              align="center">
+              align="center"
+              min-width="20%">
             </el-table-column>
             <el-table-column
               prop="passedNum"
               label="审核通过数"
-              align="center">
+              align="center"
+              min-width="20%">
             </el-table-column>
             <el-table-column
               prop="rewardNum"
               label="[审核通过]奖励总数"
-              align="center">
+              align="center"
+              min-width="20%">
             </el-table-column>
             <el-table-column
               label="操作"
-              align="center">
+              align="center"
+              min-width="20%">
               <template slot-scope="scope">
                 <el-button @click="handleClick(scope.row)" type="text" size="medium">查看详情</el-button>
                 <el-button type="text" size="medium">添加</el-button>
@@ -116,9 +128,11 @@
             </el-table-column>
           </el-table>
           <el-pagination
-            v-if="totalReward !== 0"
+            v-if="totalReward.length !== 0"
+            @current-change="currentReward"
             background
             layout="prev, pager, next"
+            :page-size="pageSize"
             :total="totalReward">
           </el-pagination>
         </el-tab-pane>
@@ -131,7 +145,8 @@
 </template>
 
 <script>
-const listUrl = 'https://easy-mock.com/mock/5ab605ce72286c70d351bc2f/example/homeList'
+const projectList = 'https://easy-mock.com/mock/5ab605ce72286c70d351bc2f/example/projectList'
+const rewardList = 'https://easy-mock.com/mock/5ab605ce72286c70d351bc2f/example/rewardList'
 
 import Nav from '../nav/nav.vue'
 
@@ -141,17 +156,21 @@ export default {
   },
   data() {
     return {
-      loading: false,
+      fullscreenLoading: false,
       projectList: [],
       rewardList: [],
-      totalProjec: 100,
-      totalReward: 50,
+      curProjectPage: 1,
+      curRewardPage: 1,
+      pageSize: 10,
+      totalProject: 0,
+      totalReward: 0,
       formInline: {
-        reward: '',
-        project: '',
-        time: ''
+        reward: '1',
+        project: '1',
+        time: this.moment().format('YYYY')
       },
-      activeNames: ['1']
+      activeName: 'first',
+      currentTab: 'first'
     };
   },
   created (){
@@ -162,24 +181,45 @@ export default {
       console.log(row);
     },
     onSubmit() {
-      this.loading = true;
-      this.projectList = [];
-      this.rewardList = [];
 
-      this.$ajax({
-        method: 'get',
-        url: listUrl,
-        data: this.formInline
-      }).then(resp => {
-        let respon = resp.data;
-        if(respon.success){
-          this.projectList = respon.data.projectList;
-          this.rewardList = respon.data.rewardList;
-        }
-        this.loading = false;
-      }).catch(error => {
-        this.messageNotify(error, 'error');
-      });
+      let url = '';
+      let obj = {};
+      this.fullscreenLoading = true;
+      if(this.currentTab == 'first'){
+        url = projectList;
+        obj.curProjectPage = this.curProjectPage;
+        obj.totalProject = this.totalProject;
+        obj.pageSize = this.pageSize;
+        this.projectList = [];
+      } else {
+        url = rewardList;
+        obj.curRewardPage = this.curRewardPage;
+        obj.totalReward = this.totalReward;
+        obj.pageSize = this.pageSize;
+        this.rewardList = [];
+      }
+      obj = Object.assign(obj, this.fomatData)
+      this.axios.get(url, obj)
+        .then(resp => {
+          let respon = resp.data;
+
+          if(respon.success){
+            if(this.currentTab == 'first'){
+              this.curProjectPage = respon.data.curProjectPage;
+              this.totalProject = respon.data.totalProject;
+              this.pageSize = respon.data.pageSize;
+              this.projectList = respon.data.projectList;
+            } else {
+              this.curRewardPage = respon.data.curRewardPage;
+              this.totalReward = respon.data.totalReward;
+              this.pageSize = respon.data.pageSize;
+              this.rewardList = respon.data.rewardList;
+            }
+          }
+          this.fullscreenLoading = false;
+        }).catch(error => {
+          this.messageNotify(error, 'error');
+        });
     },
     messageNotify(msg, type) {
       this.$notify({
@@ -188,9 +228,28 @@ export default {
         type: type,
         duration: 2000
       });
+      this.fullscreenLoading = false;
     },
-    handleChange(val) {
-      console.log(val);
+    tabClick(tab) {
+      this.currentTab = tab.name;
+    },
+    currentProject(page) {
+      this.curProjectPage = page
+      this.onSubmit();
+    },
+    currentReward(page) {
+      this.curRewardPage = page
+      this.onSubmit()
+    }
+  },
+  computed: {
+    fomatData() {
+      let time = this.moment(this.formInline.time).format('YYYY');
+      return {
+        reward: this.formInline.reward,
+        project: this.formInline.project,
+        time: time
+      }
     }
   }
 }

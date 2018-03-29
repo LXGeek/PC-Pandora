@@ -13,7 +13,7 @@
         <el-tab-pane>
           <span slot="label"><i class="el-icon-info"></i>基本信息</span>
           <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-            <el-form-item label="性别" prop="sex">
+            <el-form-item label="性别 : " prop="sex">
               <el-radio-group v-model="ruleForm.sex">
                 <el-radio :label="1">男</el-radio>
                 <el-radio :label="2">女</el-radio>
@@ -32,7 +32,7 @@
               <el-input v-model.number="ruleForm.bankCard"></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" @click="changePass()">提交</el-button>
+              <el-button type="primary" @click="submitBase()">提交</el-button>
               <el-button @click="resetForm('ruleForm')">重置</el-button>
             </el-form-item>
           </el-form>
@@ -50,7 +50,7 @@
               <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off"></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" @click="baseData()">提交</el-button>
+              <el-button type="primary" @click="changePass()">提交</el-button>
               <el-button @click="resetForm('ruleForm2')">重置</el-button>
             </el-form-item>
           </el-form>
@@ -111,7 +111,8 @@ export default {
           sex: 1,
           number: null,
           email: null,
-          idCard: null
+          idCard: null,
+          bankCard: null
         },
         rules: {
           sex: [
@@ -136,18 +137,28 @@ export default {
     }
   },
   methods: {
-    baseData() {
-      console.log(this.ruleForm2);
+    submitBase() {
+      console.log(this.ruleForm);
     },
     changePass() {
-      console.log(this.ruleForm);
+      console.log(this.passData);
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
     }
   },
   computed: {
+    passData() {
+      let oldPass = this.md5(this.ruleForm2.oldPass);
+      let pass = this.md5(this.ruleForm2.pass);
+      let checkPass = this.md5(this.ruleForm2.checkPass);
 
+      return {
+        oldPass: oldPass,
+        pass: pass,
+        checkPass: checkPass
+      }
+    },
   }
 }
 </script>
