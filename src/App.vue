@@ -12,7 +12,10 @@ export default {
 
 <style>
 @import './assets/css/reset.css';
-body {
+html, body {
+  width: 100%;
+  height: 100%;
+  position: relative;
   background: #f0f7fc;
 }
 </style>

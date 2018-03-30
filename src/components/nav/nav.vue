@@ -328,10 +328,7 @@ export default {
   },
   methods: {
     jumpTo() {
-      // this.$router.push({
-      //   path: '/setting'
-      // });
-      alert(123);
+      
     }
   },
   created() {

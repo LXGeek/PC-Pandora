@@ -5,6 +5,7 @@ import Setting from '@/components/setting/setting.vue'
 import Query from '@/components/query/query.vue'
 import QueryDetail from '@/components/query-detail/query-detail.vue'
 import DocxNotice from '@/components/docx-notice/docx-notice.vue'
+import DocxDetail from '@/components/docx-detail/docx-detail.vue'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/docx-notice',
       name: 'DocxNotice',
       component: DocxNotice
+    },
+    {
+      path: '/docx-detail',
+      name: 'DocxDetail',
+      component: DocxDetail
     },
   ]
 })

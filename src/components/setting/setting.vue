@@ -57,18 +57,18 @@
         </el-tab-pane>
       </el-tabs>
     </div>
-    <div class="footer">
-       <p>Copyright © 2013-2019 <a href="http://222.24.19.31/">西安邮电大学科技处</a></p>
-    </div>
+    <el-footer></el-footer>
   </div>
 </template>
 
 <script>
 import Nav from '../nav/nav.vue'
+import Footer from '../footer/footer.vue'
 
 export default {
   components: {
-    'el-nav': Nav
+    'el-nav': Nav,
+    'el-footer': Footer
   },
   data() {
     var validatePass = (rule, value, callback) => {

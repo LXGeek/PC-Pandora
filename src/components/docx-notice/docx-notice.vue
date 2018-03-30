@@ -41,9 +41,7 @@
         </el-table-column>
       </el-table>
     </div>
-    <div class="footer">
-       <p>Copyright © 2013-2019 <a href="http://222.24.19.31/">西安邮电大学科技处</a></p>
-    </div>
+    <el-footer></el-footer>
   </div>
 </template>
 
@@ -51,10 +49,12 @@
 const newsUrl = 'https://easy-mock.com/mock/5ab605ce72286c70d351bc2f/example/newsList'
 
 import Nav from '../nav/nav.vue'
+import Footer from '../footer/footer.vue'
 
 export default {
   components: {
-    'el-nav': Nav
+    'el-nav': Nav,
+    'el-footer': Footer
   },
   data() {
     return {
@@ -80,7 +80,7 @@ export default {
       });
     },
     handleClick(row) {
-      console.log(row.id);
+      this.$router.push({path: '/docx-detail', query: {id: row.id}});
     }
   },
   messageNotify(msg, type) {

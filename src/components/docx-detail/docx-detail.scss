@@ -1,0 +1,64 @@
+.docx-detail {
+  .content {
+    padding: 15px 25px 10px 25px;
+    .breadcrumb {
+      color: 	#A3A3A3;
+      height: 20px;
+      line-height: 20px;
+      font-size: 17px;
+      margin: 10px 0 10px 0;
+      div {
+        float: left;
+      }
+      .el-breadcrumb {
+        font-size: 17px;
+        line-height: 20px;
+        .el-breadcrumb__inner {
+          color: 	#A3A3A3;
+        }
+        .el-breadcrumb__inner:hover {
+          color: #409EFF;
+        }
+      }
+    }
+    .main-text {
+      margin: 40px 0;
+      p {
+        font-size: 20px;
+        text-align: center;
+      }
+      .detail {
+        color: #606266;
+        margin: 10px 0;
+        text-align: center;
+        span {
+          margin-right: 10px;
+        }
+      }
+      .list {
+        color: #606266;
+        li {
+          margin: 10px 0 10px 10px;
+          font-size: 16px;
+          height: 24px;
+          line-height: 24px;
+          img {
+            margin-right: 5px;
+          }
+          a {
+            margin-right: 10px;
+          }
+          a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+            color: blue;
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    position: absolute;
+    bottom: 10px;
+  }
+}
