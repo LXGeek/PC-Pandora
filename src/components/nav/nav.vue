@@ -11,7 +11,7 @@
           <el-dropdown-item>退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
-      <span>王小虎</span>
+      <span>张三</span>
     </el-header>
     </div>
     <div class="nav">
@@ -30,12 +30,6 @@
       					<li v-if="status == 2" _t_nav="manageHome">
       						<h2>
       							<a href="#">管理首页</a>
-      						</h2>
-      					</li>
-
-                <li v-if="status == 1" _t_nav="detail">
-      						<h2>
-      							<a href="#">项目详情</a>
       						</h2>
       					</li>
 
@@ -204,7 +198,7 @@
 
       				<dl style="margin-left: 90px;">
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardReview.1" href="#">科研项目</a>
+                  <a class="link" hotrep="hp.header.rewardReview.1" href="#">科研项目</a>
       					</dd>
 
       				</dl>
@@ -247,19 +241,19 @@
       			</div>
       		</div>
 
-          <div id="rewardDetail" class="nav-down-menu menu-3 menu-1" style="display: none;" _t_nav="rewardReview">
+          <div id="rewardDetail" class="nav-down-menu menu-3 menu-1" style="display: none;" _t_nav="rewardDetail">
 
       			<div class="navigation-down-inner">
 
       				<dl style="margin-left: 80px;">
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardDetail.1" href="#">科研项目</a>
+                  <router-link :to="{ name: 'ResPro'}">科研项目</router-link>
       					</dd>
       				</dl>
 
       				<dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardDetail.2" href="#">科研获奖</a>
+                  <a class="link" hotrep="hp.header.rewardDetail.2" href="#">科研获奖</a>
       					</dd>
       				</dl>
 
@@ -328,7 +322,7 @@ export default {
   },
   methods: {
     jumpTo() {
-      
+
     }
   },
   created() {
