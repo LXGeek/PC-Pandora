@@ -8,6 +8,8 @@ import DocxNotice from '@/components/docx-notice/docx-notice.vue'
 import DocxDetail from '@/components/docx-detail/docx-detail.vue'
 import ResPro from '@/components/res-pro/res-pro.vue'
 import AddRespro from '@/components/add-respro/add-respro.vue'
+import ResAwards from '@/components/res-awards/res-awards.vue'
+import AwardsDetail from '@/components/awards-detail/awards-detail.vue'
 
 Vue.use(Router)
 
@@ -58,6 +60,16 @@ export default new Router({
       path: '/add-respro',
       name: 'AddRespro',
       component: AddRespro
+    },
+    {
+      path: '/res-awards',
+      name: 'ResAwards',
+      component: ResAwards
+    },
+    {
+      path: '/awards-detail',
+      name: 'AwardsDetail',
+      component: AwardsDetail
     }
   ]
 })
