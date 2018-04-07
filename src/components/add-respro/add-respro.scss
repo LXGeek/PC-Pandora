@@ -6,7 +6,7 @@
       height: 20px;
       line-height: 20px;
       font-size: 17px;
-      margin: 10px 0 10px 0;
+      margin: 20px 0;
       div {
         float: left;
       }
@@ -27,9 +27,30 @@
     .el-tabs__item {
       font-size: 16px;
     }
-  }
-  .footer {
-    position: absolute;
-    bottom: 10px;
+    .el-form {
+      padding: 20px 700px 20px 0;
+      .el-tag + .el-tag {
+        margin-left: 10px;
+      }
+      .button-new-tag {
+        margin-left: 10px;
+        height: 32px;
+        line-height: 30px;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      .input-new-tag {
+        width: 90px;
+        margin-left: 10px;
+        vertical-align: bottom;
+      }
+    }
+    .el-upload__tip {
+      margin-left: 10px;
+    }
+    .btn {
+      padding: 20px 0 0 0;
+      text-align: center;
+    }
   }
 }
