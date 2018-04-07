@@ -253,7 +253,8 @@
 
       				<dl>
       					<dd>
-                  <a class="link" hotrep="hp.header.rewardDetail.2" href="#">科研获奖</a>
+                  <router-link :to="{ name: 'ResAwards'}">科研获奖</router-link>
+                  <!-- <a class="link" hotrep="hp.header.rewardDetail.2" href="#">科研获奖</a> -->
       					</dd>
       				</dl>
 
