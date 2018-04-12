@@ -11,7 +11,7 @@
           <el-breadcrumb-item>查看</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
-      <el-button>添加科研获奖</el-button>
+      <el-button @click="addAwards">添加科研获奖</el-button>
       <el-table
       :data="resAwards"
       v-if="resAwards.length > 0"
@@ -117,6 +117,9 @@ export default {
     },
     deleteClick(row) {
 
+    },
+    addAwards() {
+      this.$router.push({path: '/add-awards'});
     }
   }
 }

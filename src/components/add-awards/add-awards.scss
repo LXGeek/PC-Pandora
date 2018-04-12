@@ -1,4 +1,4 @@
-.res-pro {
+.add-awards {
   .content {
     padding: 15px 25px 10px 25px;
     .breadcrumb {
@@ -6,7 +6,7 @@
       height: 20px;
       line-height: 20px;
       font-size: 17px;
-      margin: 10px 0 10px 0;
+      margin: 20px 0;
       div {
         float: left;
       }
@@ -21,17 +21,10 @@
         }
       }
     }
-    .el-button {
-      margin: 10px;
+    .main {
       font-size: 16px;
       color: #606266;
-    }
-    .el-table {
-      margin: 10px;
-      .el-button--text {
-        color: #409EFF;
-        font-size: 14px;
-      }
+      margin: 20px 15px;
     }
   }
   .footer {

@@ -254,13 +254,12 @@
       				<dl>
       					<dd>
                   <router-link :to="{ name: 'ResAwards'}">科研获奖</router-link>
-                  <!-- <a class="link" hotrep="hp.header.rewardDetail.2" href="#">科研获奖</a> -->
       					</dd>
       				</dl>
 
       				<dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardDetail.3" href="#">学术论文</a>
+                  <router-link :to="{ name: 'AcadPapers'}">学术论文</router-link>
       					</dd>
       				</dl>
 
@@ -322,9 +321,7 @@ export default {
     }
   },
   methods: {
-    jumpTo() {
 
-    }
   },
   created() {
     jQuery(document).ready(function(){

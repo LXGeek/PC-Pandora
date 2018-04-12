@@ -10,6 +10,9 @@ import ResPro from '@/components/res-pro/res-pro.vue'
 import AddRespro from '@/components/add-respro/add-respro.vue'
 import ResAwards from '@/components/res-awards/res-awards.vue'
 import AwardsDetail from '@/components/awards-detail/awards-detail.vue'
+import AddAwards from '@/components/add-awards/add-awards.vue'
+import AcadPapers from '@/components/acad-papers/acad-papers.vue'
+import AddPapers from '@/components/add-papers/add-papers.vue'
 
 Vue.use(Router)
 
@@ -70,6 +73,21 @@ export default new Router({
       path: '/awards-detail',
       name: 'AwardsDetail',
       component: AwardsDetail
-    }
+    },
+    {
+      path: '/add-awards',
+      name: 'AddAwards',
+      component: AddAwards
+    },
+    {
+      path: '/acad-papers',
+      name: 'AcadPapers',
+      component: AcadPapers
+    },
+    {
+      path: '/add-papers',
+      name: 'AddPapers',
+      component: AddPapers
+    },
   ]
 })
