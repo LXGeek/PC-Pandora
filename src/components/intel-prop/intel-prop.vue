@@ -1,5 +1,5 @@
 <template>
-  <div class="res-pro" v-loading.fullscreen.lock="fullscreenLoading">
+  <div class="intel-prop" v-loading.fullscreen.lock="fullscreenLoading">
     <el-nav></el-nav>
     <div class="content">
       <div class="breadcrumb clearfix">
@@ -7,11 +7,11 @@
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
           <el-breadcrumb-item>奖励详情</el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ path: '/res-pro' }">科研项目</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ path: '/intel-prop' }">知识产权</el-breadcrumb-item>
           <el-breadcrumb-item>查看</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
-      <el-button @click="addPro">添加科研获奖</el-button>
+      <el-button @click="addPro">添加知识产权</el-button>
       <el-table
       :data="resAwards"
       v-if="resAwards.length > 0"
@@ -97,7 +97,7 @@ export default {
   },
   methods: {
     addPro() {
-      this.$router.push({ name: 'AddRespro' });
+      this.$router.push({name: 'AddIntel'});
     },
     render() {
       this.fullscreenLoading = true;
@@ -120,5 +120,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "./res-pro.scss";
+  @import "./intel-prop.scss";
 </style>

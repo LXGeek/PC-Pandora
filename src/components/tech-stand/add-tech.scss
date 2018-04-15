@@ -1,4 +1,4 @@
-.awards-detail {
+.add-tech {
   .content {
     padding: 15px 25px 10px 25px;
     .breadcrumb {
@@ -6,7 +6,7 @@
       height: 20px;
       line-height: 20px;
       font-size: 17px;
-      margin: 10px 0 10px 0;
+      margin: 20px 0;
       div {
         float: left;
       }
@@ -21,16 +21,10 @@
         }
       }
     }
-    .el-button {
-      margin: 10px;
+    .main {
       font-size: 16px;
       color: #606266;
-    }
-    .baseState {
-      font-size: 16px;
-      color: #409EFF;
-      font-weight: bold;
-      margin-top: 20px;
+      margin: 20px 15px;
     }
   }
   .footer {

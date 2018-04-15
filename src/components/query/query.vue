@@ -147,7 +147,7 @@ export default {
        this.fullscreenLoading = false;
      },
      handleClick(row) {
-       this.$router.push({path: '/query-detail', query: {id: row.id}});
+       this.$router.push({name: 'QueryDetail', query: {id: row.id}});
      }
    }
 }

@@ -80,7 +80,7 @@ export default {
       });
     },
     handleClick(row) {
-      this.$router.push({path: '/docx-detail', query: {id: row.id}});
+      this.$router.push({name: 'DocxDetail', query: {id: row.id}});
     }
   },
   messageNotify(msg, type) {

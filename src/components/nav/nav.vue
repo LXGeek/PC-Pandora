@@ -41,7 +41,7 @@
 
                 <li v-if="status == 1" _t_nav="rewardDetail">
       						<h2>
-      							<a href="#">奖励详情</a>
+                    <router-link :to="{ name: 'ResPro'}">奖励详情</router-link>
       						</h2>
       					</li>
 
@@ -92,34 +92,34 @@
       				<dl style="margin-left: 130px;">
       					<dt>项目录入</dt>
       					<dd>
-      						<a hotrep="hp.header.home.compute1" href="#">新增项目</a>
+                  <router-link hotrep="hp.header.home.compute1" :to="{ name: 'AddRespro'}">新增项目</router-link>
       					</dd>
       				</dl>
 
       				<dl>
       					<dt>成果录入</dt>
       					<dd>
-      						<a hotrep="hp.header.home.storage1" href="#">新增获奖</a>
+                  <router-link hotrep="hp.header.home.storage2" :to="{ name: 'AddAwards'}">新增获奖</router-link>
       					</dd>
 
       					<dd>
-      						<a hotrep="hp.header.home.storage2" href="#">新增论文</a>
+                  <router-link hotrep="hp.header.home.storage2" :to="{ name: 'AddPapers'}">新增论文</router-link>
       					</dd>
 
       					<dd>
-      						<a hotrep="hp.header.home.storage4" href="#">新增论文</a>
+                  <router-link hotrep="hp.header.home.storage2" :to="{ name: 'AddMonog'}">新增专著</router-link>
       					</dd>
 
       					<dd>
-      						<a hotrep="hp.header.home.storage3" href="#">新增知识产权</a>
+                  <router-link hotrep="hp.header.home.storage2" :to="{ name: 'AddIntel'}">新增知识产权</router-link>
       					</dd>
 
                 <dd>
-      						<a hotrep="hp.header.home.storage3" href="#">新增标准</a>
+                  <router-link hotrep="hp.header.home.storage2" :to="{ name: 'AddTech'}">新增标准</router-link>
       					</dd>
 
                 <dd>
-      						<a hotrep="hp.header.home.storage3" href="#">新增创作成果</a>
+                  <router-link hotrep="hp.header.home.storage2" :to="{ name: 'AddCreat'}">新增创作成果</router-link>
       					</dd>
       				</dl>
 
@@ -247,43 +247,43 @@
 
       				<dl style="margin-left: 80px;">
       					<dd>
-                  <router-link :to="{ name: 'ResPro'}">科研项目</router-link>
+                  <router-link hotrep="hp.header.rewardDetail.3" :to="{ name: 'ResPro'}">科研项目</router-link>
       					</dd>
       				</dl>
 
       				<dl>
       					<dd>
-                  <router-link :to="{ name: 'ResAwards'}">科研获奖</router-link>
+                  <router-link hotrep="hp.header.rewardDetail.3" :to="{ name: 'ResAwards'}">科研获奖</router-link>
       					</dd>
       				</dl>
 
       				<dl>
       					<dd>
-                  <router-link :to="{ name: 'AcadPapers'}">学术论文</router-link>
+                  <router-link hotrep="hp.header.rewardDetail.3" :to="{ name: 'AcadPapers'}">学术论文</router-link>
       					</dd>
       				</dl>
 
               <dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardDetail.3" href="#">学术专著</a>
+                  <router-link hotrep="hp.header.rewardDetail.3" :to="{ name: 'Monographs'}">学术专著</router-link>
       					</dd>
       				</dl>
 
               <dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardDetail.3" href="#">知识产权</a>
+                  <router-link hotrep="hp.header.rewardDetail.3" :to="{ name: 'IntelProp'}">知识产权</router-link>
       					</dd>
       				</dl>
 
               <dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardDetail.3" href="#">技术标准</a>
+                  <router-link hotrep="hp.header.rewardDetail.3" :to="{ name: 'TechStand'}">技术标准</router-link>
       					</dd>
       				</dl>
 
               <dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardDetail.3" href="#">创作成果</a>
+                  <router-link hotrep="hp.header.rewardDetail.3" :to="{ name: 'CreatAchi'}">创作成果</router-link>
       					</dd>
       				</dl>
       			</div>

@@ -1,18 +1,125 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/home/home.vue'
-import Setting from '@/components/setting/setting.vue'
-import Query from '@/components/query/query.vue'
-import QueryDetail from '@/components/query-detail/query-detail.vue'
-import DocxNotice from '@/components/docx-notice/docx-notice.vue'
-import DocxDetail from '@/components/docx-detail/docx-detail.vue'
-import ResPro from '@/components/res-pro/res-pro.vue'
-import AddRespro from '@/components/add-respro/add-respro.vue'
-import ResAwards from '@/components/res-awards/res-awards.vue'
-import AwardsDetail from '@/components/awards-detail/awards-detail.vue'
-import AddAwards from '@/components/add-awards/add-awards.vue'
-import AcadPapers from '@/components/acad-papers/acad-papers.vue'
-import AddPapers from '@/components/add-papers/add-papers.vue'
+
+const Home = (resolve) =>{
+  import('@/components/home/home.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const Setting = (resolve) =>{
+  import('@/components/setting/setting.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const Query = (resolve) =>{
+  import('@/components/query/query.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const QueryDetail = (resolve) =>{
+  import('@/components/query/query-detail.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const DocxNotice = (resolve) =>{
+  import('@/components/docx-notice/docx-notice.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const DocxDetail = (resolve) =>{
+  import('@/components/docx-notice/docx-detail.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const ResPro = (resolve) =>{
+  import('@/components/res-pro/res-pro.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const AddRespro = (resolve) =>{
+  import('@/components/res-pro/add-respro.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const ResAwards = (resolve) =>{
+  import('@/components/res-awards/res-awards.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const AddAwards = (resolve) =>{
+  import('@/components/res-awards/add-awards.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const AcadPapers = (resolve) =>{
+  import('@/components/acad-papers/acad-papers.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const AddPapers = (resolve) =>{
+  import('@/components/acad-papers/add-papers.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const Monographs = (resolve) =>{
+  import('@/components/monographs/monographs.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const AddMonog = (resolve) =>{
+  import('@/components/monographs/add-monog.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const IntelProp = (resolve) =>{
+  import('@/components/intel-prop/intel-prop.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const AddIntel = (resolve) =>{
+  import('@/components/intel-prop/add-intel.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const TechStand = (resolve) =>{
+  import('@/components/tech-stand/tech-stand.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const AddTech = (resolve) =>{
+  import('@/components/tech-stand/add-tech.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const CreatAchi = (resolve) =>{
+  import('@/components/creat-achi/creat-achi.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const AddCreat = (resolve) =>{
+  import('@/components/creat-achi/add-creat.vue').then((module) =>{
+      resolve(module)
+  })
+}
 
 Vue.use(Router)
 
@@ -40,7 +147,7 @@ export default new Router({
       component: Query
     },
     {
-      path: '/query-detail',
+      path: '/query/query-detail',
       name: 'QueryDetail',
       component: QueryDetail
     },
@@ -50,17 +157,17 @@ export default new Router({
       component: DocxNotice
     },
     {
-      path: '/docx-detail',
+      path: '/docx-notice/docx-detail',
       name: 'DocxDetail',
       component: DocxDetail
     },
     {
       path: '/res-pro',
       name: 'ResPro',
-      component: ResPro
+      component: ResPro,
     },
     {
-      path: '/add-respro',
+      path: '/res-pro/add-respro',
       name: 'AddRespro',
       component: AddRespro
     },
@@ -70,12 +177,7 @@ export default new Router({
       component: ResAwards
     },
     {
-      path: '/awards-detail',
-      name: 'AwardsDetail',
-      component: AwardsDetail
-    },
-    {
-      path: '/add-awards',
+      path: '/res-awards/add-awards',
       name: 'AddAwards',
       component: AddAwards
     },
@@ -85,9 +187,49 @@ export default new Router({
       component: AcadPapers
     },
     {
-      path: '/add-papers',
+      path: '/acad-papers/add-papers',
       name: 'AddPapers',
       component: AddPapers
+    },
+    {
+      path: '/monographs',
+      name: 'Monographs',
+      component: Monographs
+    },
+    {
+      path: '/monographs/add-monog',
+      name: 'AddMonog',
+      component: AddMonog
+    },
+    {
+      path: '/intel-prop',
+      name: 'IntelProp',
+      component: IntelProp
+    },
+    {
+      path: '/intel-prop/add-intel',
+      name: 'AddIntel',
+      component: AddIntel
+    },
+    {
+      path: '/tech-stand',
+      name: 'TechStand',
+      component: TechStand
+    },
+    {
+      path: '/tech-stand/add-tech',
+      name: 'AddTech',
+      component: AddTech
+    },
+    {
+      path: '/creat-achi',
+      name: 'CreatAchi',
+      component: CreatAchi
+    },
+    {
+      path: '/creat-achi/add-creat',
+      name: 'AddCreat',
+      component: AddCreat
     },
   ]
 })

@@ -97,7 +97,7 @@ export default {
   },
   methods: {
     addPro() {
-      this.$router.push({path: '/add-papers'});
+      this.$router.push({name: 'AddPapers'});
     },
     render() {
       this.fullscreenLoading = true;
