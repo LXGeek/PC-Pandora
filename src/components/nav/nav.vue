@@ -205,19 +205,19 @@
 
       				<dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardReview.2" href="#">科研获奖</a>
+                  <router-link hotrep="hp.header.rewardReview.1" :to="{ name: 'AwardsMange'}">科研获奖</router-link>
       					</dd>
       				</dl>
 
       				<dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardReview.3" href="#">学术论文</a>
+                  <router-link hotrep="hp.header.rewardReview.1" :to="{ name: 'PapersMange'}">学术论文</router-link>
       					</dd>
       				</dl>
 
               <dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardReview.3" href="#">学术专著</a>
+                  <router-link hotrep="hp.header.rewardReview.1" :to="{ name: 'MonogMange'}">学术专著</router-link>
       					</dd>
       				</dl>
 

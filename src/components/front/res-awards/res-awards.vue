@@ -5,9 +5,9 @@
       <div class="breadcrumb clearfix">
         <div class="title">您的当前位置&nbsp;:&nbsp;</div>
         <el-breadcrumb separator-class="el-icon-arrow-right">
-          <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ name: 'Home' }">首页</el-breadcrumb-item>
           <el-breadcrumb-item>奖励详情</el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ path: '/res-pro' }">科研获奖</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ name: 'ResAwards' }">科研获奖</el-breadcrumb-item>
           <el-breadcrumb-item>查看</el-breadcrumb-item>
         </el-breadcrumb>
       </div>

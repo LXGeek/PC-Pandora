@@ -5,7 +5,7 @@
       <div class="breadcrumb clearfix">
         <div class="title">您的当前位置&nbsp;:&nbsp;</div>
         <el-breadcrumb separator-class="el-icon-arrow-right">
-          <el-breadcrumb-item :to="{ path: '/setting' }">关于个人</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ name: 'Setting' }">关于个人</el-breadcrumb-item>
           <el-breadcrumb-item></el-breadcrumb-item>
         </el-breadcrumb>
       </div>

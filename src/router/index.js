@@ -25,6 +25,24 @@ const ResMange = (resolve) =>{
   })
 }
 
+const AwardsMange = (resolve) =>{
+  import('@/components/back/res-awards/res-awards.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const PapersMange = (resolve) =>{
+  import('@/components/back/acad-papers/acad-papers.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const MonogMange = (resolve) =>{
+  import('@/components/back/monographs/monographs.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
 const Setting = (resolve) =>{
   import('@/components/setting/setting.vue').then((module) =>{
       resolve(module)
@@ -170,97 +188,112 @@ export default new Router({
       component: ResMange
     },
     {
+      path: '/home-manage/awards-mange',
+      name: 'AwardsMange',
+      component: AwardsMange
+    },
+    {
+      path: '/home-manage/acad-papers',
+      name: 'PapersMange',
+      component: PapersMange
+    },
+    {
+      path: '/home-manage/monographs',
+      name: 'MonogMange',
+      component: MonogMange
+    },
+    {
       path: '/setting',
       name: 'Setting',
       component: Setting
     },
     {
-      path: '/query',
+      path: '/home/query',
       name: 'Query',
       component: Query
     },
     {
-      path: '/query/query-detail',
+      path: '/home/query/query-detail',
       name: 'QueryDetail',
       component: QueryDetail
     },
     {
-      path: '/docx-notice',
+      path: '/home/docx-notice',
       name: 'DocxNotice',
       component: DocxNotice
     },
     {
-      path: '/docx-notice/docx-detail',
+      path: '/home/docx-notice/docx-detail',
       name: 'DocxDetail',
       component: DocxDetail
     },
     {
-      path: '/res-pro',
+      path: '/home/res-pro',
       name: 'ResPro',
       component: ResPro,
     },
     {
-      path: '/res-pro/add-respro',
+      path: '/home/res-pro/add-respro',
       name: 'AddRespro',
       component: AddRespro
     },
     {
-      path: '/res-awards',
+      path: '/home/res-awards',
       name: 'ResAwards',
       component: ResAwards
     },
     {
-      path: '/res-awards/add-awards',
+      path: '/home/res-awards/add-awards',
       name: 'AddAwards',
       component: AddAwards
     },
     {
-      path: '/acad-papers',
+      path: '/home/acad-papers',
       name: 'AcadPapers',
       component: AcadPapers
     },
     {
-      path: '/acad-papers/add-papers',
+      path: '/home/acad-papers/add-papers',
       name: 'AddPapers',
       component: AddPapers
     },
     {
-      path: '/monographs',
+      path: '/home/monographs',
       name: 'Monographs',
       component: Monographs
     },
     {
-      path: '/monographs/add-monog',
+      path: '/home/monographs/add-monog',
       name: 'AddMonog',
       component: AddMonog
     },
     {
-      path: '/intel-prop',
+      path: '/home/intel-prop',
       name: 'IntelProp',
       component: IntelProp
     },
     {
-      path: '/intel-prop/add-intel',
+      path: '/home/intel-prop/add-intel',
       name: 'AddIntel',
       component: AddIntel
     },
     {
-      path: '/tech-stand',
+      path: '/home/tech-stand',
       name: 'TechStand',
       component: TechStand
     },
     {
-      path: '/tech-stand/add-tech',
+      path: '/home/tech-stand/add-tech',
       name: 'AddTech',
       component: AddTech
     },
     {
-      path: '/creat-achi',
+      path: '/home/creat-achi',
       name: 'CreatAchi',
       component: CreatAchi
     },
     {
-      path: '/creat-achi/add-creat',
+      path: '/home/creat-achi/add-creat',
       name: 'AddCreat',
       component: AddCreat
     },
