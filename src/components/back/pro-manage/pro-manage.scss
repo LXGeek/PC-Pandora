@@ -1,0 +1,48 @@
+.pro-manage {
+  .content {
+    padding: 15px 25px;
+    .breadcrumb {
+      color: #606266;
+      height: 20px;
+      line-height: 20px;
+      font-size: 17px;
+      margin: 10px 0 10px 0;
+      div {
+        float: left;
+      }
+      .el-breadcrumb {
+        font-size: 17px;
+        line-height: 20px;
+        .el-breadcrumb__inner {
+          color: #606266;
+        }
+        .el-breadcrumb__inner:hover {
+          color: #409EFF;
+        }
+      }
+    }
+    .el-form {
+      font-size: 16px;
+      margin: 25px 0 0 15px;
+      .el-form-item {
+        .el-form-item__label {
+          font-size: 16px;
+        }
+      }
+    }
+    .el-table {
+      font-size: 15px;
+      .el-table__header {
+        width: 100%;
+        min-width: 100%;
+      }
+      .el-table__empty-block {
+        width: 100%;
+        min-width: 100%;
+      }
+    }
+    .el-pagination {
+      padding: 15px 0 0 0;
+    }
+  }
+}

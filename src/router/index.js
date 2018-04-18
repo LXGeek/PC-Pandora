@@ -2,7 +2,25 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 const Home = (resolve) =>{
-  import('@/components/home/home.vue').then((module) =>{
+  import('@/components/front/home/home.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const HomeManage = (resolve) =>{
+  import('@/components/back/home-manage/home-manage.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const ProManage = (resolve) =>{
+  import('@/components/back/pro-manage/pro-manage.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const ResMange = (resolve) =>{
+  import('@/components/back/res-pro/res-pro.vue').then((module) =>{
       resolve(module)
   })
 }
@@ -14,109 +32,109 @@ const Setting = (resolve) =>{
 }
 
 const Query = (resolve) =>{
-  import('@/components/query/query.vue').then((module) =>{
+  import('@/components/front/query/query.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const QueryDetail = (resolve) =>{
-  import('@/components/query/query-detail.vue').then((module) =>{
+  import('@/components/front/query/query-detail.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const DocxNotice = (resolve) =>{
-  import('@/components/docx-notice/docx-notice.vue').then((module) =>{
+  import('@/components/front/docx-notice/docx-notice.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const DocxDetail = (resolve) =>{
-  import('@/components/docx-notice/docx-detail.vue').then((module) =>{
+  import('@/components/front/docx-notice/docx-detail.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const ResPro = (resolve) =>{
-  import('@/components/res-pro/res-pro.vue').then((module) =>{
+  import('@/components/front/res-pro/res-pro.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const AddRespro = (resolve) =>{
-  import('@/components/res-pro/add-respro.vue').then((module) =>{
+  import('@/components/front/res-pro/add-respro.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const ResAwards = (resolve) =>{
-  import('@/components/res-awards/res-awards.vue').then((module) =>{
+  import('@/components/front/res-awards/res-awards.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const AddAwards = (resolve) =>{
-  import('@/components/res-awards/add-awards.vue').then((module) =>{
+  import('@/components/front/res-awards/add-awards.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const AcadPapers = (resolve) =>{
-  import('@/components/acad-papers/acad-papers.vue').then((module) =>{
+  import('@/components/front/acad-papers/acad-papers.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const AddPapers = (resolve) =>{
-  import('@/components/acad-papers/add-papers.vue').then((module) =>{
+  import('@/components/front/acad-papers/add-papers.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const Monographs = (resolve) =>{
-  import('@/components/monographs/monographs.vue').then((module) =>{
+  import('@/components/front/monographs/monographs.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const AddMonog = (resolve) =>{
-  import('@/components/monographs/add-monog.vue').then((module) =>{
+  import('@/components/front/monographs/add-monog.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const IntelProp = (resolve) =>{
-  import('@/components/intel-prop/intel-prop.vue').then((module) =>{
+  import('@/components/front/intel-prop/intel-prop.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const AddIntel = (resolve) =>{
-  import('@/components/intel-prop/add-intel.vue').then((module) =>{
+  import('@/components/front/intel-prop/add-intel.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const TechStand = (resolve) =>{
-  import('@/components/tech-stand/tech-stand.vue').then((module) =>{
+  import('@/components/front/tech-stand/tech-stand.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const AddTech = (resolve) =>{
-  import('@/components/tech-stand/add-tech.vue').then((module) =>{
+  import('@/components/front/tech-stand/add-tech.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const CreatAchi = (resolve) =>{
-  import('@/components/creat-achi/creat-achi.vue').then((module) =>{
+  import('@/components/front/creat-achi/creat-achi.vue').then((module) =>{
       resolve(module)
   })
 }
 
 const AddCreat = (resolve) =>{
-  import('@/components/creat-achi/add-creat.vue').then((module) =>{
+  import('@/components/front/creat-achi/add-creat.vue').then((module) =>{
       resolve(module)
   })
 }
@@ -135,6 +153,21 @@ export default new Router({
       path: '/home',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/home-manage',
+      name: 'HomeManage',
+      component: HomeManage
+    },
+    {
+      path: '/home-manage/pro-manage',
+      name: 'ProManage',
+      component: ProManage
+    },
+    {
+      path: '/home-manage/res-mange',
+      name: 'ResMange',
+      component: ResMange
     },
     {
       path: '/setting',

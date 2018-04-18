@@ -29,13 +29,13 @@
 
       					<li v-if="status == 2" _t_nav="manageHome">
       						<h2>
-      							<a href="#">管理首页</a>
+                    <router-link :to="{ name: 'HomeManage'}">管理首页</router-link>
       						</h2>
       					</li>
 
       					<li v-if="status == 2" _t_nav="product">
       						<h2>
-      							<a href="#">项目管理</a>
+                    <router-link :to="{ name: 'ProManage'}">项目管理</router-link>
       						</h2>
       					</li>
 
@@ -184,7 +184,7 @@
       				<dl>
       					<dt>关于个人</dt>
       					<dd>
-      						<a hotrep="hp.header.manageHome.monitoring1" href="#">个人信息维护</a>
+                  <router-link hotrep="hp.header.manageHome.monitoring1" :to="{ name: 'Setting'}">个人信息维护</router-link>
       					</dd>
       				</dl>
 
@@ -198,7 +198,7 @@
 
       				<dl style="margin-left: 90px;">
       					<dd>
-                  <a class="link" hotrep="hp.header.rewardReview.1" href="#">科研项目</a>
+                  <router-link hotrep="hp.header.rewardReview.1" :to="{ name: 'ResMange'}">科研项目</router-link>
       					</dd>
 
       				</dl>
@@ -317,7 +317,7 @@
 export default {
   data () {
     return {
-      status: 1
+      status: 2
     }
   },
   methods: {
