@@ -43,6 +43,36 @@ const MonogMange = (resolve) =>{
   })
 }
 
+const IntelManage = (resolve) =>{
+  import('@/components/back/intel-prop/intel-prop.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const StandManage = (resolve) =>{
+  import('@/components/back/tech-stand/tech-stand.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const CreatManage = (resolve) =>{
+  import('@/components/back/creat-achi/creat-achi.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const ProQueryManage = (resolve) =>{
+  import('@/components/back/query/pro-query/pro-query.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const RewQueryManage = (resolve) =>{
+  import('@/components/back/query/reward-query/reward-query.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
 const Setting = (resolve) =>{
   import('@/components/setting/setting.vue').then((module) =>{
       resolve(module)
@@ -201,6 +231,31 @@ export default new Router({
       path: '/home-manage/monographs',
       name: 'MonogMange',
       component: MonogMange
+    },
+    {
+      path: '/home-manage/intel-prop',
+      name: 'IntelManage',
+      component: IntelManage
+    },
+    {
+      path: '/home-manage/tech-stand',
+      name: 'StandManage',
+      component: StandManage
+    },
+    {
+      path: '/home-manage/creat-achi',
+      name: 'CreatManage',
+      component: CreatManage
+    },
+    {
+      path: '/home-manage/pro-query',
+      name: 'ProQueryManage',
+      component: ProQueryManage
+    },
+    {
+      path: '/home-manage/reward-query',
+      name: 'RewQueryManage',
+      component: RewQueryManage
     },
     {
       path: '/setting',

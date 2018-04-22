@@ -223,19 +223,19 @@
 
               <dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardReview.3" href="#">知识产权</a>
+                  <router-link hotrep="hp.header.rewardReview.1" :to="{ name: 'IntelManage'}">知识产权</router-link>
       					</dd>
       				</dl>
 
               <dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardReview.3" href="#">技术标准</a>
+                  <router-link hotrep="hp.header.rewardReview.1" :to="{ name: 'StandManage'}">技术标准</router-link>
       					</dd>
       				</dl>
 
               <dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.rewardReview.3" href="#">创作成果</a>
+                  <router-link hotrep="hp.header.rewardReview.1" :to="{ name: 'CreatManage'}">创作成果</router-link>
       					</dd>
       				</dl>
       			</div>
@@ -294,13 +294,13 @@
 
       				<dl style="margin-left: 415px;">
       					<dd>
-      						<a class="link" hotrep="hp.header.search.1" href="#">项目查询</a>
+                  <router-link hotrep="hp.header.search.1" :to="{ name: 'ProQueryManage'}">项目查询</router-link>
       					</dd>
       				</dl>
 
       				<dl>
       					<dd>
-      						<a class="link" hotrep="hp.header.search.2" href="#">奖励查询</a>
+                  <router-link hotrep="hp.header.search.2" :to="{ name: 'RewQueryManage'}">奖励查询</router-link>
       					</dd>
       				</dl>
 

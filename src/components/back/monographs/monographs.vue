@@ -7,7 +7,7 @@
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item :to="{ name: 'HomeManage' }">管理首页</el-breadcrumb-item>
           <el-breadcrumb-item>奖励审核</el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ name: 'ResMange' }">科研项目</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ name: 'MonogMange' }">学术专著</el-breadcrumb-item>
           <el-breadcrumb-item></el-breadcrumb-item>
         </el-breadcrumb>
       </div>

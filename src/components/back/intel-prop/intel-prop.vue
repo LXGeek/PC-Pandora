@@ -1,5 +1,5 @@
 <template>
-  <div class="acad-papers" v-loading.fullscreen.lock="fullscreenLoading">
+  <div class="intel-prop" v-loading.fullscreen.lock="fullscreenLoading">
     <el-nav></el-nav>
     <div class="content">
       <div class="breadcrumb clearfix">
@@ -7,7 +7,7 @@
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item :to="{ name: 'HomeManage' }">管理首页</el-breadcrumb-item>
           <el-breadcrumb-item>奖励审核</el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ name: 'PapersMange' }">学术论文</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ name: 'IntelManage' }">知识产权</el-breadcrumb-item>
           <el-breadcrumb-item></el-breadcrumb-item>
         </el-breadcrumb>
       </div>
@@ -76,24 +76,14 @@
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="刊物等级 : ">
-              <el-select v-model="formInline.paperGrade">
+            <el-form-item label="知识产权 : ">
+              <el-select v-model="formInline.intelProp">
                 <el-option label="全部" value="全部"></el-option>
-                <el-option label="A&HCI" value="A&HCI"></el-option>
-                <el-option label="CSCD源期刊" value="CSCD源期刊"></el-option>
-                <el-option label="CSSCI" value="CSSCI"></el-option>
-                <el-option label="EI会议" value="EI会议"></el-option>
-                <el-option label="EI期刊" value="EI期刊"></el-option>
-                <el-option label="Nature" value="Nature"></el-option>
-                <el-option label="Science" value="Science"></el-option>
-                <el-option label="SCI一区期刊" value="SCI一区期刊"></el-option>
-                <el-option label="SCI二区期刊" value="SCI二区期刊"></el-option>
-                <el-option label="SCI三区期刊" value="SCI三区期刊"></el-option>
-                <el-option label="SCI四区期刊" value="SCI四区期刊"></el-option>
-                <el-option label="SSCI" value="SSCI"></el-option>
-                <el-option label="中国社会科学" value="中国社会科学"></el-option>
-                <el-option label="中国科学" value="中国科学"></el-option>
-                <el-option label="哲学社科类最具影响力的国内学术期刊" value="哲学社科类最具影响力的国内学术期刊"></el-option>
+                <el-option label="发明专利" value="发明专利"></el-option>
+                <el-option label="外观设计专利" value="外观设计专利"></el-option>
+                <el-option label="实用新型专利" value="实用新型专利"></el-option>
+                <el-option label="软件著作权" value="软件著作权"></el-option>
+                <el-option label="集成电路布图设计" value="集成电路布图设计"></el-option>
               </el-select>
             </el-form-item>
           </el-col>
@@ -218,7 +208,7 @@ export default {
         departments: '全部',
         reAmount: '全部',
         appStatus: '全部',
-        paperGrade: '全部',
+        intelProp: '全部',
       },
     };
   },
@@ -287,5 +277,5 @@ export default {
 </script>
 
 <style lang='scss'>
-  @import "./acad-papers.scss";
+  @import "./intel-prop.scss";
 </style>
