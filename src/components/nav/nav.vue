@@ -59,13 +59,13 @@
 
       					<li v-if="status == 2" _t_nav="user">
       						<h2>
-      							<a href="#">用户管理</a>
+                    <router-link :to="{ name: 'UserManage'}">用户管理</router-link>
       						</h2>
       					</li>
 
       					<li v-if="status == 2" _t_nav="data">
       						<h2>
-      							<a href="#">数据配置</a>
+                    <router-link :to="{ name: 'DataConfig'}">数据配置</router-link>
       						</h2>
       					</li>
                 <li _t_nav="news">

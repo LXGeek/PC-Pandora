@@ -1,0 +1,29 @@
+.data-config {
+  .content {
+    padding: 15px 25px 10px 25px;
+    .breadcrumb {
+      color: #606266;
+      height: 20px;
+      line-height: 20px;
+      font-size: 17px;
+      margin: 10px 0 10px 0;
+      div {
+        float: left;
+      }
+      .el-breadcrumb {
+        font-size: 17px;
+        line-height: 20px;
+        .el-breadcrumb__inner {
+          color: #606266;
+        }
+        .el-breadcrumb__inner:hover {
+          color: #409EFF;
+        }
+      }
+    }
+  }
+  .footer {
+    position: absolute;
+    bottom: 10px;
+  }
+}

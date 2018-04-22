@@ -73,6 +73,18 @@ const RewQueryManage = (resolve) =>{
   })
 }
 
+const UserManage = (resolve) =>{
+  import('@/components/back/user-manage/user-manage.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
+const DataConfig = (resolve) =>{
+  import('@/components/back/data-config/data-config.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
 const Setting = (resolve) =>{
   import('@/components/setting/setting.vue').then((module) =>{
       resolve(module)
@@ -256,6 +268,16 @@ export default new Router({
       path: '/home-manage/reward-query',
       name: 'RewQueryManage',
       component: RewQueryManage
+    },
+    {
+      path: '/home-manage/user-manage',
+      name: 'UserManage',
+      component: UserManage
+    },
+    {
+      path: '/home-manage/data-config',
+      name: 'DataConfig',
+      component: DataConfig
     },
     {
       path: '/setting',
