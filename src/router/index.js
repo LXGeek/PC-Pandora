@@ -225,12 +225,12 @@ export default new Router({
       component: ProManage
     },
     {
-      path: '/home-manage/res-mange',
+      path: '/home-manage/res-manage',
       name: 'ResMange',
       component: ResMange
     },
     {
-      path: '/home-manage/awards-mange',
+      path: '/home-manage/awards-manage',
       name: 'AwardsMange',
       component: AwardsMange
     },

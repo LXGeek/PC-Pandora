@@ -47,13 +47,14 @@
 
       					<li v-if="status == 2" _t_nav="rewardReview">
       						<h2>
-      							<a href="#">奖励审核</a>
+                    <router-link :to="{ name: 'ResMange'}">奖励审核</router-link>
       						</h2>
       					</li>
 
       					<li _t_nav="search">
       						<h2>
-                    <router-link :to="{ name: 'Query'}">条件查询</router-link>
+                    <router-link v-if="status == 1" :to="{ name: 'Query'}">条件查询</router-link>
+                    <router-link v-else :to="{ name: 'ProQueryManage'}">条件查询</router-link>
       						</h2>
       					</li>
 
