@@ -9,13 +9,16 @@ import $ from 'jquery'
 import axios from 'axios'
 import md5 from 'js-md5'
 import moment from 'moment'
+import VueParticles from 'vue-particles'
 
 Vue.prototype.axios = axios
 Vue.prototype.md5 = md5
 Vue.prototype.moment = moment
 
 Vue.config.productionTip = false
+
 Vue.use(ElementUI)
+Vue.use(VueParticles)
 
 /* eslint-disable no-new */
 new Vue({

@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+const Login = (resolve) =>{
+  import('@/components/login/login.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
 const Home = (resolve) =>{
   import('@/components/front/home/home.vue').then((module) =>{
       resolve(module)
@@ -206,8 +212,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/home',
-      component: Home
+      redirect: '/login',
+      component: Login
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     },
     {
       path: '/home',

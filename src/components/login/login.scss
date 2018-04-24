@@ -1,0 +1,90 @@
+.particles {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 43, 90);
+  .vue-particles {
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+  }
+  .login {
+    width: 390px;
+    height: 550px;
+    background: rgba(255, 255, 255, .8);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+    .header {
+      width: 100%;
+      height: 85px;
+      margin: 0 auto;
+      padding-top: 20px;
+      .logo, .title {
+        float: left;
+      }
+      .logo {
+        width: 85px;
+        height: 85px;
+      }
+      .title {
+        margin-left: 10px;
+        color: #002b5a;
+        font-size: 24px;
+        line-height: 85px;
+      }
+    }
+    .el-form  {
+      margin: 40px 0 0 -40px;
+      .el-form-item {
+        cursor: pointer;
+        margin-bottom: 37px;
+        .el-form-item__label {
+          padding: 0;
+          color: #002b5a;
+          font-size: 15px;
+        }
+        .el-form-item__content {
+          margin-left: 0 !important;
+          .el-input {
+            float: left;
+            width: 65%;
+            margin-left: 20px;
+          }
+          .el-form-item__error {
+            top: 115%;
+            left: 125px;
+          }
+        }
+        .el-button+.el-button {
+          margin-left: 50px;
+        }
+        a {
+          color: red;
+          text-decoration: underline;
+          position: absolute;
+          top: 80%;
+          left: 125px;
+        }
+      }
+      .submit {
+        margin: 60px 0 0 50px;
+      }
+    }
+  }
+  .footer {
+    z-index: 100;
+    background: none;
+    color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    bottom: 10px;
+    a {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}

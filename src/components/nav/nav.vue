@@ -8,7 +8,7 @@
         <i class="el-icon-setting" style="margin-right: 15px"></i>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item><router-link :to="{ name: 'Setting'}">个人设置</router-link></el-dropdown-item>
-          <el-dropdown-item>退出登录</el-dropdown-item>
+          <el-dropdown-item><router-link :to="{ name: 'Login'}">退出登录</router-link></el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
       <span>张三</span>
@@ -319,7 +319,7 @@
 export default {
   data () {
     return {
-      status: 2
+      status: 1
     }
   },
   methods: {
