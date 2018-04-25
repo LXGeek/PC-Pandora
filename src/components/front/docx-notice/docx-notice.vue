@@ -81,16 +81,16 @@ export default {
     },
     handleClick(row) {
       this.$router.push({name: 'DocxDetail', query: {id: row.id}});
-    }
-  },
-  messageNotify(msg, type) {
-    this.$notify({
-      title: '提示',
-      message: msg,
-      type: type,
-      duration: 2000
-    });
-    this.fullscreenLoading = false;
+    },
+    messageNotify(msg, type) {
+      this.$notify({
+        title: '提示',
+        message: msg,
+        type: type,
+        duration: 2000
+      });
+      this.fullscreenLoading = false;
+    },
   },
 }
 </script>

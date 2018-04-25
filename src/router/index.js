@@ -7,6 +7,12 @@ const Login = (resolve) =>{
   })
 }
 
+const ForgetPass = (resolve) =>{
+  import('@/components/login/forget-pass.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
 const Home = (resolve) =>{
   import('@/components/front/home/home.vue').then((module) =>{
       resolve(module)
@@ -219,6 +225,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/forget-pass',
+      name: 'ForgetPass',
+      component: ForgetPass
     },
     {
       path: '/home',

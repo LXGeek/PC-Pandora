@@ -76,9 +76,11 @@
       						</h2>
       					</li>
                 <li _t_nav="goto">
-      						<h2>
-      							<a v-if="status == 1" href="#">进入后台审核</a>
-                    <a v-if="status == 2" href="#">进入前台录入</a>
+      						<h2 @click="toBack()">
+                    <a v-if="status == 1">进入后台审核</a>
+      						</h2>
+                  <h2 @click="toFront()">
+                    <a v-if="status == 2">进入前台录入</a>
       						</h2>
       					</li>
       				</ul>
@@ -316,6 +318,7 @@
 </template>
 
 <script>
+
 export default {
   data () {
     return {
@@ -323,11 +326,19 @@ export default {
     }
   },
   methods: {
-
+    toBack() {
+      this.status = 2;
+      console.log('toBack >>>>' + this.status);
+      this.$router.push({ name: 'HomeManage' });
+    },
+    toFront() {
+      this.status = 1;
+      console.log('toFront >>>>' + this.status);
+      this.$router.push({ name: 'Home' });
+    },
   },
-  created() {
+  mounted() {
     jQuery(document).ready(function(){
-
     	let qcloud = {};
 
     	$('[_t_nav]').hover(function(){
@@ -363,8 +374,8 @@ export default {
     	}, 200);
 
     	});
-
     });
+    console.log('created >>>>' + this.status);
 
   }
 }
