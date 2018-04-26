@@ -88,7 +88,6 @@
             </el-form-item>
           </el-form>
         </el-tab-pane>
-        <el-tab-pane label="项目成员及介绍" name="second">项目成员及介绍</el-tab-pane>
         <el-tab-pane label="简介/创新点/预期成果" name="third">
           <el-form :model="form.ruleForm3" :rules="rules" ref="form.ruleForm3" label-width="100px" class="demo-ruleForm">
             <el-form-item label="项目简介 : " prop="projectDes">

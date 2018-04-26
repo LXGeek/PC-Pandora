@@ -97,6 +97,12 @@ const DataConfig = (resolve) =>{
   })
 }
 
+const NoticeManage = (resolve) =>{
+  import('@/components/back/docx-notice/docx-notice.vue').then((module) =>{
+      resolve(module)
+  })
+}
+
 const Setting = (resolve) =>{
   import('@/components/setting/setting.vue').then((module) =>{
       resolve(module)
@@ -300,6 +306,11 @@ export default new Router({
       path: '/home-manage/data-config',
       name: 'DataConfig',
       component: DataConfig
+    },
+    {
+      path: '/home-manage/notice-manage',
+      name: 'NoticeManage',
+      component: NoticeManage
     },
     {
       path: '/setting',

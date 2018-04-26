@@ -72,8 +72,7 @@
                 <li _t_nav="news">
       						<h2>
                     <router-link v-if="status == 1" :to="{ name: 'DocxNotice'}">文档-通知</router-link>
-                    <!-- <router-link v-else :to="{ name: 'DocxNotice'}">文档-通知</router-link> -->
-                    <a v-else href="#">文档-通知</a>
+                    <router-link v-else :to="{ name: 'NoticeManage'}">文档-通知</router-link>
       						</h2>
       					</li>
                 <li _t_nav="goto">
