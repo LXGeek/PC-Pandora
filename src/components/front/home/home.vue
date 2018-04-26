@@ -1,6 +1,6 @@
 <template>
   <div class="home" v-loading.fullscreen.lock="fullscreenLoading">
-    <el-nav></el-nav>
+    <el-nav :status="status"></el-nav>
     <div class="content">
       <div class="breadcrumb clearfix">
         <div>您的当前位置&nbsp;:&nbsp;</div>
@@ -156,6 +156,7 @@ export default {
   },
   data() {
     return {
+      status: 1,
       fullscreenLoading: false,
       projectList: [],
       rewardList: [],

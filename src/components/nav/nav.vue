@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main" :status="this.status">
     <div class="header clearfix">
       <img src="@/assets/img/logo.png"/>
       <div class="title">科研业务综合管理系统</div>
@@ -77,8 +77,8 @@
       					</li>
                 <li _t_nav="goto">
       						<h2>
-      							<a v-if="status == 1" href="#">进入后台审核</a>
-                    <a v-if="status == 2" href="#">进入前台录入</a>
+                    <router-link v-if="status == 1" :to="{ name: 'HomeManage'}">进入后台审核</router-link>
+                    <router-link v-if="status == 2" :to="{ name: 'Home'}">进入前台录入</router-link>
       						</h2>
       					</li>
       				</ul>
@@ -317,9 +317,10 @@
 
 <script>
 export default {
+  props: ['status'],
   data () {
     return {
-      status: 1
+
     }
   },
   methods: {
