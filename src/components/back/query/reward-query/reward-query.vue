@@ -1,6 +1,6 @@
 <template>
   <div class="reward-query" v-loading.fullscreen.lock="fullscreenLoading">
-    <el-nav></el-nav>
+    <el-nav :status="status"></el-nav>
     <div class="content">
       <div class="breadcrumb clearfix">
         <div class="title">您的当前位置&nbsp;:&nbsp;</div>
@@ -132,6 +132,7 @@ export default {
   },
   data() {
      return {
+       status: 2,
        fullscreenLoading: false,
        formInline: {
          timeRange: '',

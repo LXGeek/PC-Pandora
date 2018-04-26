@@ -1,6 +1,6 @@
 <template>
   <div class="add-monog">
-    <el-nav></el-nav>
+    <el-nav :status="status"></el-nav>
     <div class="content">
       <div class="breadcrumb clearfix">
         <div class="title">您的当前位置&nbsp;:&nbsp;</div>
@@ -83,6 +83,7 @@ export default {
   },
   data() {
     return {
+      status: 1,
       formInline: {
         monogName: '',
         ISBN: '',

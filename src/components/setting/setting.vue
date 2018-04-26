@@ -1,6 +1,6 @@
 <template>
   <div class="setting">
-    <el-nav></el-nav>
+    <el-nav :status="status"></el-nav>
     <div class="content">
       <div class="breadcrumb clearfix">
         <div class="title">您的当前位置&nbsp;:&nbsp;</div>
@@ -91,6 +91,7 @@ export default {
       }
     };
     return {
+      status: 1,
       ruleForm2: {
         pass: '',
         checkPass: '',
