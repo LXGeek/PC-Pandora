@@ -128,7 +128,6 @@
       				<dl>
       					<dt>关于个人</dt>
       					<dd>
-      						<!-- <a hotrep="hp.header.home.monitoring1" href="#">个人信息维护</a> -->
                   <router-link hotrep="hp.header.home.monitoring1" :to="{ name: 'Setting'}">个人信息维护</router-link>
       					</dd>
 
@@ -316,6 +315,7 @@
 </template>
 
 <script>
+
 export default {
   props: ['status'],
   data () {
@@ -326,9 +326,8 @@ export default {
   methods: {
 
   },
-  created() {
+  mounted() {
     jQuery(document).ready(function(){
-
     	let qcloud = {};
 
     	$('[_t_nav]').hover(function(){
@@ -364,8 +363,8 @@ export default {
     	}, 200);
 
     	});
-
     });
+    console.log('created >>>>' + this.status);
 
   }
 }
