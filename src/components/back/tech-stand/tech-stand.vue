@@ -1,5 +1,5 @@
 <template>
-  <div class="tech-stand" v-loading.fullscreen.lock="fullscreenLoading">
+  <div class="tech-manage" v-loading.fullscreen.lock="fullscreenLoading">
     <el-nav :status="status"></el-nav>
     <div class="content">
       <div class="breadcrumb clearfix">

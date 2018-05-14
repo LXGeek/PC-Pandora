@@ -1,5 +1,5 @@
 <template>
-  <div class="acad-papers" v-loading.fullscreen.lock="fullscreenLoading">
+  <div class="acad-manage" v-loading.fullscreen.lock="fullscreenLoading">
     <el-nav :status="status"></el-nav>
     <div class="content">
       <div class="breadcrumb clearfix">
