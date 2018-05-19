@@ -10,6 +10,14 @@
         </el-breadcrumb>
       </div>
       <el-form :inline="true" :model="formInline" class="demo-form-inline">
+        <el-form-item label="项目类型">
+          <el-select v-model="formInline.project" placeholder="请选择项目类型">
+            <el-option label="国家级" value="1"></el-option>
+            <el-option label="省部级" value="2"></el-option>
+            <el-option label="厅局级" value="3"></el-option>
+            <el-option label="院校级" value="4"></el-option>
+          </el-select>
+        </el-form-item>
         <el-form-item label="奖励类别">
           <el-select v-model="formInline.reward" placeholder="请选择奖励类别">
             <el-option label="科研项目" value="1"></el-option>
@@ -18,14 +26,6 @@
             <el-option label="知识产权" value="4"></el-option>
             <el-option label="技术标准" value="5"></el-option>
             <el-option label="创作成果" value="6"></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="项目类型">
-          <el-select v-model="formInline.project" placeholder="请选择项目类型">
-            <el-option label="国家级" value="1"></el-option>
-            <el-option label="省部级" value="2"></el-option>
-            <el-option label="厅局级" value="3"></el-option>
-            <el-option label="院校级" value="4"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="选择年份">
@@ -80,7 +80,6 @@
             </el-table-column>
           </el-table>
           <el-pagination
-            v-if="totalProject !== 0"
             @current-change="currentProject"
             background
             layout="prev, pager, next"
@@ -128,7 +127,6 @@
             </el-table-column>
           </el-table>
           <el-pagination
-            v-if="totalReward.length !== 0"
             @current-change="currentReward"
             background
             layout="prev, pager, next"
@@ -166,8 +164,8 @@ export default {
       totalProject: 0,
       totalReward: 0,
       formInline: {
-        reward: '1',
-        project: '1',
+        reward: '',
+        project: '',
         time: this.moment().format('YYYY')
       },
       activeName: 'first',
@@ -202,6 +200,7 @@ export default {
       obj = Object.assign(obj, this.fomatData)
       this.axios.get(url, obj)
         .then(resp => {
+          console.log(resp);
           let respon = resp.data;
 
           if(respon.success){

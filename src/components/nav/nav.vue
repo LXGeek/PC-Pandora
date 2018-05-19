@@ -329,43 +329,24 @@ export default {
   mounted() {
     jQuery(document).ready(function(){
     	let qcloud = {};
-
     	$('[_t_nav]').hover(function(){
-
     		let _nav = $(this).attr('_t_nav');
-
     		clearTimeout( qcloud[ _nav + '_timer' ] );
-
     		qcloud[ _nav + '_timer' ] = setTimeout(function(){
-
-    		$('[_t_nav]').each(function(){
-
-    		$(this)[ _nav == $(this).attr('_t_nav') ? 'addClass':'removeClass' ]('nav-up-selected');
-
-    		});
-
-    		$('#'+_nav).stop(true,true).slideDown(400);
-
-    	}, 200);
-
+      		$('[_t_nav]').each(function(){
+      		    $(this)[ _nav == $(this).attr('_t_nav') ? 'addClass':'removeClass' ]('nav-up-selected');
+      		});
+      		$('#'+_nav).stop(true,true).slideDown(400);
+      	}, 200);
     	},function(){
-
     		let _nav = $(this).attr('_t_nav');
-
     		clearTimeout( qcloud[ _nav + '_timer' ] );
-
     		qcloud[ _nav + '_timer' ] = setTimeout(function(){
-
-    		$('[_t_nav]').removeClass('nav-up-selected');
-
-    		$('#'+_nav).stop(true,true).slideUp(400);
-
-    	}, 200);
-
+      		$('[_t_nav]').removeClass('nav-up-selected');
+      		$('#'+_nav).stop(true,true).slideUp(400);
+      	}, 200);
     	});
     });
-    console.log('created >>>>' + this.status);
-
   }
 }
 </script>

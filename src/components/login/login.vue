@@ -23,7 +23,7 @@
       <div class="header">
         <span class="clearfix" style="display: inline-block;">
           <img class="logo" src="../../assets/img/logo-mini.png" alt="">
-          <span class="title">科研业务综合管理系统</span>
+          <!-- <span class="title">科研业务综合管理系统</span> -->
         </span>
       </div>
       <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
